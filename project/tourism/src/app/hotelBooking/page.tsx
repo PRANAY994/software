@@ -140,21 +140,77 @@ export default function HotelBooking() {
   }
 
   return (
-    <div className="p-8 bg-gray-900 min-h-screen text-white">
-      <h1 className="text-4xl font-bold mb-6 text-center">Hotel Search in India</h1>
+    <div className="p-8 bg-cover bg-center min-h-screen text-white" style={{ backgroundImage: "url('/back.jpg')" }}>
+    <h1 className="text-4xl font-bold mb-6 text-center">Hotel Search in India</h1>
+  
+    <div className="flex justify-center gap-4">
+      <input
+        type="text"
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+        placeholder="Enter City in India"
+        className="border p-3 rounded bg-gray-800 text-white w-80 text-center"
+      />
+      <button onClick={searchHotels} className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 font-semibold">
+        Search Hotels
+      </button>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
-      <div className="flex justify-center gap-4">
-        <input
-          type="text"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder="Enter City in India"
-          className="border p-3 rounded bg-gray-800 text-white w-80 text-center"
-        />
-        <button onClick={searchHotels} className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 font-semibold">
-          Search Hotels
-        </button>
-      </div>
+  {/* Outer Box with Whiteish Opacity */}
+  <div className="tabs-content mt-8 text-center p-6 rounded-lg max-w-md mr-auto bg-white/20 backdrop-blur-sm">
+    <h4 className="text-2xl font-semibold mb-6 text-white">FIND US ON:</h4>
+    <div className="flex flex-col gap-4">
+      {/* Facebook Box */}
+      <a
+        href="http://facebook.com"
+        className="bg-transparent p-4 rounded-lg text-white hover:bg-blue-500/50 transition duration-300 ease-in-out border border-gray-700 hover:border-blue-500 font-sans"
+      >
+        <div className="flex items-center justify-center gap-3">
+          {/* Small Box for Icon */}
+          <div className="w-16 h-16 flex items-center justify-center bg-gray-800 rounded-lg">
+          <i className="fa fa-facebook" style={{ fontSize: "2.5rem" }}></i>
+          </div>
+          <span className="font-semibold">FIND US ON <span className="font-bold">FACEBOOK</span></span>
+        </div>
+      </a>
+
+      {/* YouTube Box */}
+      <a
+        href="http://youtube.com"
+        className="bg-transparent p-4 rounded-lg text-white hover:bg-red-500/50 transition duration-300 ease-in-out border border-gray-700 hover:border-red-500 font-sans"
+      >
+        <div className="flex items-center justify-center gap-3">
+          {/* Small Box for Icon */}
+          <div className="w-16 h-16 flex items-center justify-center bg-gray-800 rounded-lg">
+            <i className="fa fa-youtube text-4xl"style={{ fontSize: "2.5rem" }}></i>
+          </div>
+          <span className="font-semibold">OUR <span className="font-bold">YOUTUBE CHANNEL</span></span>
+        </div>
+      </a>
+
+      {/* Instagram Box */}
+      <a
+        href="http://instagram.com"
+        className="bg-transparent p-4 rounded-lg text-white hover:bg-pink-500/50 transition duration-300 ease-in-out border border-gray-700 hover:border-pink-500 font-sans"
+      >
+        <div className="flex items-center justify-center gap-3">
+          {/* Small Box for Icon */}
+          <div className="w-16 h-16 flex items-center justify-center bg-gray-800 rounded-lg">
+            <i className="fa fa-instagram text-4xl"style={{ fontSize: "2.5rem" }}></i>
+          </div>
+          <span className="font-semibold">FOLLOW OUR <span className="font-bold">INSTAGRAM</span></span>
+        </div>
+      </a>
+    </div>
+
+    {/* Contact Us Button */}
+    <button className="mt-6 bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 font-semibold">
+      Contact Us Now
+    </button>
+  </div>
+      
+
 
       {hotels.length > 0 && (
         <div className="mt-6 text-center">
